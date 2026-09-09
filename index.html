@@ -4,43 +4,40 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#071923">
-  <title>DOSSIER: Undercover bij de Pofietsie</title>
-  <meta name="description" content="Vertrouwelijk dossier - Undercover bij de Pofietsie. Kraak de toegangscode en lees de briefing.">
+  <title>Undercover bij de Pofietsie · Geheim Dossier</title>
+  <meta name="description" content="Undercover bij de Pofietsie — kraak de codes en bekijk het geheime dossier.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto+Slab:wght@400;600;800&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="dossier-theme">
+<body>
 
-  <!-- ==================== QUIZ GATE (TOEGANGSCONTROLE) ==================== -->
+  <!-- QUIZ GATE / TOEGANGSCONTROLE -->
   <div id="quizGate" class="quiz-gate">
     <div class="grain"></div>
-    <div class="quiz-card dossier-box">
-      <div class="stamp-mini">VERTROUWELIJK</div>
+    <div class="quiz-card">
+      <div class="stamp-mini">CLASSIFIED</div>
       <div class="brand-mini">UNDERCOVER<br><span>BIJ DE POFIETSIE</span></div>
       <div class="progress"><span id="progressBar"></span></div>
       <p class="eyebrow">TOP SECRET · TOEGANGSCONTROLE</p>
-      
-      <!-- Antwoord Placeholders zijn configureerbaar in JS / data attributen -->
-      <h1 id="questionTitle">Identificatie Vraag 1</h1>
-      <p id="questionText">Vul de geheimcode of het antwoord in op vraag 1.</p>
-      
-      <form id="quizForm" data-p1="PLACEHOLDER_ANTWOORD_1" data-p2="PLACEHOLDER_ANTWOORD_2" data-p3="PLACEHOLDER_ANTWOORD_3">
-        <input id="answer" autocomplete="off" required placeholder="Typ antwoord hier..." />
+      <h1 id="questionTitle">Vraag 1</h1>
+      <p id="questionText"></p>
+      <form id="quizForm">
+        <input id="answer" autocomplete="off" required placeholder="Vul je antwoord in..." />
         <p id="quizMessage" class="quiz-message" aria-live="polite"></p>
-        <button class="btn btn-dossier" type="submit">Bevestig Code <span>→</span></button>
+        <button class="btn" type="submit">Volgende <span>→</span></button>
       </form>
-      <p class="tiny">Beantwoord alle 3 de vragen om dossiertoegang te verkrijgen.</p>
+      <p class="tiny">Beantwoord alle 3 de vragen goed om toegang te krijgen tot het dossier.</p>
     </div>
   </div>
 
-  <!-- ==================== HOOFD DOSSIER ==================== -->
+  <!-- HOOFD SITE -->
   <main id="site" class="site hidden">
-    
+
     <!-- NAVIGATIE -->
-    <header class="nav dossier-nav">
-      <a class="logo" href="#briefing">DOSSIER <span>#POFIETSIE-2026</span></a>
+    <header class="nav">
+      <a class="logo" href="#briefing">Undercover <span>bij de Pofietsie</span></a>
       <button class="menu" id="menuBtn" aria-label="Menu">☰</button>
       <nav id="navLinks">
         <a href="#briefing">Briefing</a>
@@ -51,200 +48,179 @@
       </nav>
     </header>
 
-    <!-- 1. WELKOM / BRIEFING -->
-    <section id="briefing" class="hero dossier-hero">
+    <!-- WELKOM & BRIEFING -->
+    <section id="briefing" class="hero">
       <div class="hero-overlay"></div>
-      <div class="hero-content paper-style">
-        <div class="stamp">STRENG<br>GEHEIM</div>
-        <p class="eyebrow">VERTROUWELIJK DOSSIER · OPERATIE BRIEFING 001</p>
-        <h2>Welkom, Agent.<br><span>Je briefing begint hier.</span></h2>
-        <p class="lead">Je bent geselecteerd voor een hoogst geheime undercoveroperatie. Lees deze instructies aandachtig en vernietig ze in gedachten.</p>
-        <hr class="dossier-divider">
+      <div class="hero-content">
+        <p class="eyebrow">VERTROUWELIJK DOSSIER · ALLEEN VOOR GENODIGDEN</p>
+        <h2>Undercover<br><span>bij de Pofietsie</span></h2>
+        <p>De operatie is gestart. Lees hieronder je officiële briefing en bereid je voor op een weekend vol geheimen, undercoveracties en verdachte types.</p>
+        <a class="btn" href="#briefing-text">Open het Dossier ↓</a>
+      </div>
+      <div class="stamp">TOP<br>SECRET</div>
+    </section>
+
+    <!-- PAPIEREN BRIEFING -->
+    <section id="briefing-text" class="paper-section">
+      <div class="paper">
+        <p class="eyebrow">OFFICIEEL DOCUMENT · BRIEFING 001</p>
+        <h2>De Briefing</h2>
         <p>Beste undercover agent,</p>
-        <p>Je bent door je netwerk gekozen om een weekend volledig undercover te gaan. Dit betreft een kritieke operatie waar we alleen de meest flexibele, creatieve en betrouwbare agenten op inzetten. Mensen met een stalen pokerface, sterke samenwerking en een meesterlijke reputatie in vermommen.</p>
-        <p><strong>Hoofdinstructie:</strong> Blijf onopvallend. Of speel je rol zo overtuigend dat niemand vragen durft te stellen.</p>
-        <a class="btn btn-dossier" href="#wie-zijn-wij">Bekijk Afdelingsdossier ↓</a>
+        <p>Je bent vanwege je vrienden gekozen om een weekend undercover te gaan.</p>
+        <p>Dit betreft een geheime operatie waar we alleen de allerbeste mensen op inzetten. Mensen die elkaar kennen, die weerbaar, flexibel en creatief zijn. Een pokerface hebben, perfect samenwerken, goed acteren, niet snel bang zijn en een meester zijn in verkleden en vermommen.</p>
+        <strong>Missie: Blijf (on)opvallend. Of doe in ieder geval alsof.</strong>
       </div>
     </section>
 
-    <!-- 2. WIE ZIJN WIJ (POFIETSIE) -->
-    <section id="wie-zijn-wij" class="section dossier-section">
-      <div class="container">
-        <p class="eyebrow">AFDELINGSDOSSIER · CLASSIFIED</p>
-        <h2>Wie zijn wij? De Pofietsie.</h2>
-        <div class="grid-2">
-          <div class="text-block">
-            <p><strong>Wij bestaan officieel niet.</strong></p>
-            <p>De Pofietsie is een speciale eenheid — vergelijkbaar met de politie, maar dan vele malen efficiënter, slimmer en subtieler.</p>
-            <p>Omdat wij geen herkenbare uniformen of opzichtige politieauto's gebruiken, vallen we nooit op. We zijn milieubewust, biologisch, wendbaar en opereren altijd onder de radar.</p>
-          </div>
-          <div class="status-box">
-            <span class="badge">STATUS: ACTIEF</span>
-            <p class="small-note">"Geen zwaailichten, geen sirenes. Alleen resultaat."</p>
-          </div>
-        </div>
+    <!-- WIE ZIJN WIJ -->
+    <section id="wie-zijn-wij" class="section dossier">
+      <div>
+        <p class="eyebrow">AFDELINGSDOSSIER</p>
+        <h2>Wie zijn wij?</h2>
+        <p class="lead-text"><strong>Wij bestaan officieel niet.</strong></p>
+        <p>Wij zijn de Pofietsie: een soort politie, maar dan veel beter. We zijn geheimer want we vallen niet op — we hebben geen opzichtige politieauto's of uniformen.</p>
+        <p>Verder zijn we slimmer, milieubewuster, meer woke, LHBTQI+-vriendelijker, goedkoper, biologischer en nog veel meer.</p>
+      </div>
+      <div class="suspect-photo">
+        <div class="silhouette">🕵️‍♂️</div>
+        <span>POFIETSIE UNIT</span>
       </div>
     </section>
 
-    <!-- 3. MISSIE GROTE VOGEL -->
-    <section id="missie" class="section dossier-section highlight-bg">
-      <div class="container">
+    <!-- MISSIE GROTE VOGEL -->
+    <section id="missie" class="section mission-box">
+      <div class="mission-card">
         <p class="eyebrow">OPERATIE SPECS · DOSSIER 014</p>
         <h2>Missie Grote Vogel</h2>
-        <p class="intro">Het operationele venster staat vast. Zorg dat je tijdig aanwezig bent op het hoofdkwartier.</p>
-        
-        <div class="timeline-box">
-          <div class="time-item">
-            <strong>Start Operatie:</strong> Vrijdag 13 november 2026 — vanaf 16:00 uur
-          </div>
-          <div class="time-item">
-            <strong>Einde Operatie:</strong> Maandag 16 november 2026 — uiterlijk 10:00 uur
-          </div>
+        <div class="timeline">
+          <p><strong>Aankomst Hoofdkwartier:</strong> Vrijdag 13 november vanaf 16.00 uur</p>
+          <p><strong>Einde Operatie:</strong> Maandag 16 november uiterlijk 10.00 uur</p>
         </div>
-
+        
         <!-- HOOFDKWARTIER PLACEHOLDER -->
-        <div class="hq-placeholder-card">
-          <div class="hq-header">📍 LOCATIE HOOFDKWARTIER (CLASSIFIED)</div>
-          <div class="hq-content">
-            <p>[ HOOFDKWARTIER LOCATIE PLACEHOLDER ]</p>
-            <span class="subtext">Exacte adresgegevens en navigatie-instructies worden kort voor aanvang vrijgegeven aan geautoriseerde agenten.</span>
-          </div>
+        <div class="hq-placeholder">
+          <span class="hq-title">📍 HOOFDKWARTIER LOCATIE</span>
+          <p>[ HOOFDKWARTIER PLACEHOLDER - LOCATIE WORDT ZSM VRIJGEGEVEN ]</p>
         </div>
       </div>
     </section>
 
-    <!-- 4. VOORBEREIDING -->
-    <section id="voorbereiding" class="section dossier-section">
-      <div class="container">
-        <p class="eyebrow">OPERATIONELE VOORBEREIDING</p>
-        <h2>Voorbereidingsvoorschriften</h2>
-        <p class="intro">Zorg dat je uitrusting, uitstraling en timing naadloos aansluiten op het undercoverprofiel.</p>
+    <!-- VOORBEREIDING -->
+    <section id="voorbereiding" class="section theme">
+      <p class="eyebrow">OPERATIONELE VOORBEREIDING</p>
+      <h2>Voorbereidingsvoorschriften</h2>
+      <p class="intro">Zorg dat je uitrusting, verschijning en timing tot in de puntjes zijn voorbereid.</p>
 
-        <!-- COUNTDOWN -->
-        <div class="countdown-card">
-          <h3>⏱ Countdown tot Operatie Pofietsie</h3>
-          <p class="countdown-subtitle">Target datum: 14 november 2026 om 16:00 uur</p>
-          <div id="countdownTimer" class="timer-display" data-target="2026-11-14T16:00:00">
-            <div class="time-unit"><span id="days">00</span><label>Dagen</label></div>
-            <div class="time-unit"><span id="hours">00</span><label>Uren</label></div>
-            <div class="time-unit"><span id="minutes">00</span><label>Minuten</label></div>
-            <div class="time-unit"><span id="seconds">00</span><label>Seconden</label></div>
-          </div>
+      <!-- COUNTDOWN -->
+      <div class="countdown-card">
+        <h3>⏱ Countdown tot Operatie Pofietsie</h3>
+        <p class="countdown-target">Target: 14 november 2026 om 16:00 uur</p>
+        <div id="countdownTimer" class="timer-display">
+          <div class="time-unit"><span id="days">00</span><label>Dagen</label></div>
+          <div class="time-unit"><span id="hours">00</span><label>Uren</label></div>
+          <div class="time-unit"><span id="minutes">00</span><label>Minuten</label></div>
+          <div class="time-unit"><span id="seconds">00</span><label>Seconden</label></div>
         </div>
+      </div>
 
-        <!-- 4 ONDERDELEN -->
-        <div class="cards-grid">
-          <!-- Kleding -->
-          <article class="prep-card">
-            <div class="card-tag">01 · VERMOMMING</div>
-            <h3>Kleding (Punkers & Bikers)</h3>
-            <p>Volledig undercover. Denk aan leer, denim, patches, bandshirts, robuuste boots, zonnebrillen en attitude. Of mix beide stijlen voor de ultieme dekking.</p>
-          </article>
+      <!-- 4 ONDERDELEN -->
+      <div class="prep-grid">
+        <article class="prep-card">
+          <div class="card-icon">🧥</div>
+          <h3>1. Kleding (Punkers & Bikers)</h3>
+          <p>Ga volledig undercover. Denk leer, denim, patches, bandshirts, boots, zonnebrillen en vooral: veel attitude. Combineer stijlen om niet op te vallen.</p>
+        </article>
 
-          <!-- Haarstijl -->
-          <article class="prep-card">
-            <div class="card-tag">02 · HAARSTIJL</div>
-            <h3>Haarstijl & Coup</h3>
-            <p>Iets wat zegt: <em>"Ik hou me niet aan de regels"</em>. Ruig, opgeschoren, mohawks, rommelige vetkuiven of opvallende accessoires. Zorg dat je onherkenbaar bent voor bekenden.</p>
-          </article>
+        <article class="prep-card">
+          <div class="card-icon">✂️</div>
+          <h3>2. Haarstijl</h3>
+          <p>Kies een look die onherkenbaar maakt. Denk aan ruige spikes, vetkuiven, opgeschoren zijkanten, opvallende haarbanden of wilde krullen.</p>
+        </article>
 
-          <!-- Muziek -->
-          <article class="prep-card">
-            <div class="card-tag">03 · AUDIO</div>
-            <h3>Muziek & Sfeer</h3>
-            <p>Bereid je oren voor op rauwe gitaarseries, punk-classics, biker rock en duistere underground beats. De afspeellijst van de missie wordt binnenkort gesynchroniseerd.</p>
-          </article>
-        </div>
+        <article class="prep-card">
+          <div class="card-icon">🎸</div>
+          <h3>3. Muziek</h3>
+          <p>Pomp jezelf vol energie met rauwe gitaarseries, punk-classics en biker anthems. De afspeellijst wordt voor aanvang van de missie gesynchroniseerd.</p>
+        </article>
+
+        <article class="prep-card">
+          <div class="card-icon">⏳</div>
+          <h3>4. Countdown</h3>
+          <p>De klok tikt gestaag door. Zorg dat je spullen klaarstaan voor het moment dat het hoofdkwartier opent op 14 november 2026.</p>
+        </article>
       </div>
     </section>
 
     <!-- QUOTE -->
-    <section class="quote-banner">
-      <blockquote>“Iedereen is verdacht totdat het tegendeel bewezen is.”</blockquote>
+    <section class="quote">
+      <p>“Iedereen is verdacht totdat het tegendeel bewezen is.”</p>
     </section>
 
-    <!-- 5. AANMELDEN & BETALING -->
-    <section id="aanmelden" class="section signup-section">
-      <div class="container">
-        <p class="eyebrow">PERSONEELSDOSSIER · REGISTRATIE</p>
-        <h2>Aanmelden & Machtiging</h2>
-        <p class="intro">Bevestig je deelname. Vul het formulier in. De gegevens worden direct verwerkt in het centrale Google Sheets-register.</p>
+    <!-- AANMELDEN & BETALING -->
+    <section id="aanmelden" class="section signup">
+      <div class="signup-container">
+        <div class="signup-header">
+          <p class="eyebrow">PERSONEELSDOSSIER</p>
+          <h2>Aanmelden</h2>
+          <p>Laat weten dat je erbij bent. Vul je gegevens in om je accreditatie voor de Pofietsie-missie te voltooien.</p>
+        </div>
 
-        <div class="signup-wrapper">
-          <!-- FORMULIER -->
-          <form id="signupForm" class="signup-form">
-            <div class="form-group">
-              <label for="name">Codenaam / Volledige Naam *</label>
-              <input type="text" id="name" name="name" required placeholder="bijv. Agent Pietersen">
+        <form id="signupForm" class="signup-form">
+          <label>Naam
+            <input required name="name" placeholder="Je codenaam of echte naam">
+          </label>
+
+          <label>Aantal personen
+            <input required name="people" type="number" min="1" value="1">
+          </label>
+
+          <label>Aankomst
+            <input required name="arrival" type="datetime-local">
+          </label>
+
+          <label>Vertrek
+            <input name="departure" type="datetime-local">
+          </label>
+
+          <fieldset>
+            <legend>Heb je vervoer?</legend>
+            <label class="radio"><input type="radio" name="transport" value="Ja" required> Ja</label>
+            <label class="radio"><input type="radio" name="transport" value="Nee"> Nee</label>
+          </fieldset>
+
+          <label>Dieetwensen
+            <textarea name="diet" placeholder="Vegetarisch, allergieën, etc."></textarea>
+          </label>
+
+          <label>Wat drink je graag?
+            <textarea name="drinks" placeholder="Bier, wijn, fris, 0.0, etc."></textarea>
+          </label>
+
+          <button class="btn" type="submit">Aanmelden Registreren →</button>
+          <p id="signupMessage" class="form-message" aria-live="polite"></p>
+        </form>
+
+        <!-- BETAAL BOX -->
+        <div class="payment-box">
+          <div class="stamp-paid">KOSTEN</div>
+          <h3>Eigen Bijdrage Missie</h3>
+          <p class="price">€249,- <span>p.p.</span></p>
+          <p class="pay-info">De eigen bijdrage bedraagt exact <strong>€249</strong> voor het gehele operatie-weekend.</p>
+          
+          <div class="qr-wrapper">
+            <div class="qr-placeholder">
+              <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://tikkie.me/pay/pofietsie" alt="QR Code Betaling €249">
             </div>
-
-            <div class="form-row">
-              <div class="form-group">
-                <label for="people">Aantal personen *</label>
-                <input type="number" id="people" name="people" min="1" value="1" required>
-              </div>
-              <div class="form-group">
-                <label for="transport">Eigen vervoer beschikbaar? *</label>
-                <select id="transport" name="transport" required>
-                  <option value="" disabled selected>Kies een optie</option>
-                  <option value="Ja">Ja, ik heb vervoer</option>
-                  <option value="Nee">Nee, ik zoek/bied vervoer</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div class="form-group">
-                <label for="arrival">Geplande Aankomst *</label>
-                <input type="datetime-local" id="arrival" name="arrival" required>
-              </div>
-              <div class="form-group">
-                <label for="departure">Gepland Vertrek *</label>
-                <input type="datetime-local" id="departure" name="departure" required>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="diet">Dieetwensen & Allergieën</label>
-              <textarea id="diet" name="diet" rows="2" placeholder="Vegetarisch, vegan, allergieën..."></textarea>
-            </div>
-
-            <div class="form-group">
-              <label for="drinks">Voorkeur Rantsoen / Drank</label>
-              <textarea id="drinks" name="drinks" rows="2" placeholder="Bier, wijn, fris, 0.0%..."></textarea>
-            </div>
-
-            <button class="btn btn-submit" type="submit" id="submitBtn">
-              <span class="btn-text">Verstuur Dossier Registratie →</span>
-            </button>
-            <p id="signupMessage" class="form-message" aria-live="polite"></p>
-          </form>
-
-          <!-- BETALING EN QR CODE -->
-          <div class="payment-card">
-            <div class="stamp-paid">KOSTEN</div>
-            <h3>Eigen Bijdrage Missie</h3>
-            <p class="price-tag">€249,- <span>per agent</span></p>
-            <p class="payment-desc">De bijdrage van <strong>€249</strong> dient te worden voldaan voor definitieve accreditatie van het dossier.</p>
-            
-            <div class="qr-container">
-              <div class="qr-placeholder">
-                <!-- Vervang de afbeelding of src door jouw eigen QR-code (bijv. Tikkie / Betaalverzoek) -->
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://tikkie.me/pay/pofietsie-placeholder" alt="QR Code Betaling €249">
-              </div>
-              <span class="qr-caption">Scan met je bank-app / Tikkie om €249 te voldoen</span>
-            </div>
+            <p class="qr-sub">Scan de QR-code met je bank-app om de bijdrage direct te voldoen.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="dossier-footer">
-      <div class="container footer-content">
-        <span>UNDERCOVER BIJ DE POFIETSIE © 2026</span>
-        <span>VERTROUWELIJK // ONDERVOORBEHOUD</span>
-      </div>
+    <footer>
+      <span>UNDERCOVER BIJ DE POFIETSIE © 2026</span>
+      <span>STRENG GEHEIM · ALLEEN VOOR GENODIGDEN</span>
     </footer>
   </main>
 
