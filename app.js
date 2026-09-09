@@ -61,6 +61,43 @@ document.querySelectorAll("#navLinks a").forEach(link => {
   link.addEventListener("click", () => document.getElementById("navLinks").classList.remove("open"));
 });
 
+
+// Countdown Timer naar 14 november 2026 16:00
+function startCountdown() {
+  const targetDate = new Date("2026-11-14T16:00:00").getTime();
+
+  const daysEl = document.getElementById("days");
+  const hoursEl = document.getElementById("hours");
+  const minutesEl = document.getElementById("minutes");
+  const secondsEl = document.getElementById("seconds");
+
+  if (!daysEl) return;
+
+  function updateTimer() {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+
+    if (distance < 0) {
+      document.getElementById("countdownTimer").innerHTML = "<p style='color:#efbd5c;'>MISSIE IS GESTART!</p>";
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    daysEl.textContent = String(days).padStart(2, '0');
+    hoursEl.textContent = String(hours).padStart(2, '0');
+    minutesEl.textContent = String(minutes).padStart(2, '0');
+    secondsEl.textContent = String(seconds).padStart(2, '0');
+  }
+
+  updateTimer();
+  setInterval(updateTimer, 1000);
+}
+
+
 document.getElementById("signupForm").addEventListener("submit", async (event) => {
   event.preventDefault();
 
