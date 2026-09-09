@@ -8,9 +8,9 @@
 const SHEET_ENDPOINT = "";
 
 const QUESTIONS = [
-  { text: "Wat is de geheime code?", answer: "GEHEIM" },
-  { text: "Wat is de code van de koffer?", answer: "1234" },
-  { text: "Maak de zin af: vanwege ...", answer: "DE MISSIE" }
+  { text: "Wat is de geheime code?", answer: "CPB&PGrtVgl" },
+  { text: "Wat is de code van de koffer?", answer: "986" },
+  { text: "Maak de zin af: vanwege ...", answer: "je vrienden" }
 ];
 
 let current = 0;
