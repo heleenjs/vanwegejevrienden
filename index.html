@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071923">
+  <title>Undercover bij de Pofietsie</title>
+  <meta name="description" content="Undercover bij de Pofietsie — kraak de codes en ontdek de missie.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto+Slab:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="quizGate" class="quiz-gate">
+    <div class="grain"></div>
+    <div class="quiz-card">
+      <div class="brand-mini">UNDERCOVER<br><span>BIJ DE POFIETSIE</span></div>
+      <div class="progress"><span id="progressBar"></span></div>
+      <p class="eyebrow">TOP SECRET · TOEGANGSCONTROLE</p>
+      <h1 id="questionTitle">Vraag 1</h1>
+      <p id="questionText"></p>
+      <form id="quizForm">
+        <input id="answer" autocomplete="off" required placeholder="Vul je antwoord in..." />
+        <p id="quizMessage" class="quiz-message" aria-live="polite"></p>
+        <button class="btn" type="submit">Volgende <span>→</span></button>
+      </form>
+      <p class="tiny">Alle drie de vragen goed? Dan krijg je toegang tot het dossier.</p>
+    </div>
+  </div>
+
+  <main id="site" class="site hidden">
+    <header class="nav">
+      <a class="logo" href="#home">Undercover <span>bij de Pofietsie</span></a>
+      <button class="menu" id="menuBtn" aria-label="Menu">☰</button>
+      <nav id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#verdachte">De verdachte</a>
+        <a href="#thema">Thema</a>
+        <a href="#aanmelden">Aanmelden</a>
+      </nav>
+    </header>
+
+    <section id="home" class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="eyebrow">GEHEIM DOSSIER · ALLEEN VOOR GENODIGDEN</p>
+        <h2>Undercover<br><span>bij de Pofietsie</span></h2>
+        <p>De missie is geopend. Lees je briefing, bekijk het dossier en bereid je voor op een avond vol punkers, bikers, geheimen en verdachte types.</p>
+        <a class="btn" href="#verdachte">Open het dossier →</a>
+      </div>
+      <div class="stamp">TOP<br>SECRET</div>
+    </section>
+
+    <section class="paper-section">
+      <div class="paper">
+        <p class="eyebrow">VERTROUWELIJK · BRIEFING 001</p>
+        <h2>De brief</h2>
+        <p>Beste undercover agent,</p>
+        <p>Er is iets verdachts aan de hand bij de Pofietsie. Een groep punkers en bikers lijkt meer te weten dan ze zeggen. Jij bent geselecteerd om undercover te gaan.</p>
+        <p>Bestudeer de verdachte, kies je outfit zorgvuldig en zorg dat niemand ontdekt aan welke kant jij staat.</p>
+        <strong>Missie: blijf onopvallend. Of doe in ieder geval alsof.</strong>
+      </div>
+    </section>
+
+    <section id="verdachte" class="section dossier">
+      <div>
+        <p class="eyebrow">DOSSIER 014</p>
+        <h2>De verdachte</h2>
+        <p>De verdachte is iemand die zich moeiteloos aanpast aan elke situatie. Hij of zij is slim, charmant en weet precies hoe je mensen kunt beïnvloeden.</p>
+        <ul>
+          <li>Verdacht goed in vermomming</li>
+          <li>Heeft altijd een plan</li>
+          <li>Houdt van aandacht — maar niet te veel</li>
+          <li>Is waarschijnlijk al onder ons</li>
+        </ul>
+      </div>
+      <div class="suspect-photo">
+        <div class="silhouette">?</div>
+        <span>WIE IS HET?</span>
+      </div>
+    </section>
+
+    <section id="thema" class="section theme">
+      <p class="eyebrow">VERMOMMING · KLEDINGVOORSCHRIFT</p>
+      <h2>Punkers & Bikers</h2>
+      <p class="intro">Ga volledig undercover. Denk leer, denim, patches, bandshirts, boots, zonnebrillen en vooral: veel attitude.</p>
+      <div class="cards">
+        <article class="theme-card punk">
+          <div class="card-icon">✦</div>
+          <h3>Punker</h3>
+          <p>Bandshirt, leren jas, patches, studs, opvallende accessoires en een kapsel dat zegt: “ik heb niets te verliezen.”</p>
+        </article>
+        <article class="theme-card biker">
+          <div class="card-icon">⚡</div>
+          <h3>Biker</h3>
+          <p>Leer, denim, boots, zonnebril, bandana en een houding alsof je zo van je motor stapt.</p>
+        </article>
+        <article class="theme-card undercover">
+          <div class="card-icon">☠</div>
+          <h3>Undercover</h3>
+          <p>Mix alles door elkaar. Hoe moeilijker je te plaatsen bent, hoe beter je missie geslaagd is.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="quote">
+      <p>“Iedereen is verdacht totdat het tegendeel bewezen is.”</p>
+    </section>
+
+    <section id="aanmelden" class="section signup">
+      <div>
+        <p class="eyebrow">PERSONEELSDOSSIER</p>
+        <h2>Aanmelden</h2>
+        <p>Laat weten dat je erbij bent. Vul je aankomst, vertrek en voorkeuren in zodat de organisatie alles kan voorbereiden.</p>
+      </div>
+      <form id="signupForm" class="signup-form">
+        <label>Naam<input required name="name" placeholder="Je naam"></label>
+        <label>Aantal personen<input required name="people" type="number" min="1" placeholder="1"></label>
+        <label>Aankomst<input required name="arrival" type="datetime-local"></label>
+        <label>Vertrek<input name="departure" type="datetime-local"></label>
+        <fieldset>
+          <legend>Heb je vervoer?</legend>
+          <label class="radio"><input type="radio" name="transport" value="Ja" required> Ja</label>
+          <label class="radio"><input type="radio" name="transport" value="Nee"> Nee</label>
+        </fieldset>
+        <label>Dieetwensen<textarea name="diet" placeholder="Vegetarisch, allergieën, etc."></textarea></label>
+        <label>Wat drink je graag?<textarea name="drinks" placeholder="Bier, wijn, fris, 0.0, etc."></textarea></label>
+        <button class="btn" type="submit">Aanmelden →</button>
+        <p id="signupMessage" class="form-message" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <footer>
+      <span>UNDERCOVER BIJ DE POFIETSIE</span>
+      <span>GEHEIM · GEHEIM · GEHEIM</span>
+    </footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
