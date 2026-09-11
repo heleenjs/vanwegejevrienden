@@ -4,7 +4,7 @@
 
 // 1. Plak hier straks de URL van jullie Google Apps Script Web App.
 // Voorbeeld:
-const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbzU1pxpu1w5l4pclWHBcwCtosqwR4rxr5FfXaBAdiZn7piUOHa6ZbVgk9hOazejb7oB/exec";
+const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbwOJaGMc0WFCX5GcCV4d6n6JOl1FV44JhmYbRMnqfWsFhhW998F12k8nWiSknxDHP-s/exec";
 
 const QUESTIONS = [
   { text: "Wat is de geheime code?", answer: "CPB&PGrtVgl" },
