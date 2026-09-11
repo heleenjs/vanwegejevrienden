@@ -4,7 +4,7 @@
 
 // 1. Plak hier straks de URL van jullie Google Apps Script Web App.
 // Voorbeeld:
-const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbzU1pxpu1w5l4pclWHBcwCtosqwR4rxr5FfXaBAdiZn7piUOHa6ZbVgk9hOazejb7oB/exec";
+const SHEET_ENDPOINT = "PASTE_YOUR_GOOGLE_APPS_SCRIPT_EXEC_URL_HERE";
 
 const QUESTIONS = [
   { text: "Wat is de geheime code?", answer: "CPB&PGrtVgl" },
@@ -64,7 +64,7 @@ document.querySelectorAll("#navLinks a").forEach(link => {
 
 // Countdown Timer naar 14 november 2026 16:00
 function startCountdown() {
-  const targetDate = new Date("2026-11-14T16:00:00").getTime();
+  const targetDate = new Date("2026-11-14T16:00:00+01:00").getTime();
 
   const daysEl = document.getElementById("days");
   const hoursEl = document.getElementById("hours");
@@ -104,7 +104,7 @@ document.getElementById("signupForm").addEventListener("submit", async (event) =
   const message = document.getElementById("signupMessage");
   const form = event.currentTarget;
 
-  if (!SHEET_ENDPOINT) {
+  if (!SHEET_ENDPOINT || !SHEET_ENDPOINT.startsWith("https://script.google.com/macros/s/") || !SHEET_ENDPOINT.endsWith("/exec")) {
     message.textContent =
       "De aanmelding is ingevuld, maar de Google Sheet is nog niet gekoppeld. Voeg eerst de Apps Script-URL toe in app.js.";
     return;
@@ -125,7 +125,7 @@ document.getElementById("signupForm").addEventListener("submit", async (event) =
 
     form.reset();
     message.textContent =
-      "Aanmelding ontvangen! We hebben je gegevens doorgestuurd naar de organisatie.";
+      "Aanmelding ontvangen! Je gegevens zijn doorgestuurd naar de organisatie. Vergeet daarna niet het betaalverzoek van €199 te voldoen.";
   } catch (error) {
     console.error(error);
     message.textContent =
@@ -134,3 +134,4 @@ document.getElementById("signupForm").addEventListener("submit", async (event) =
 });
 
 showQuestion();
+startCountdown();
