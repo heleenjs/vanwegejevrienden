@@ -1,73 +1,38 @@
 # Undercover bij de Pofietsie
 
-Mobiele one-page website met een 3-staps quiz als toegangspoort en een aanmeldformulier.
+Deze versie houdt de bestaande donkere/papieren layout en quiz intact en repareert de teller en de aanmeldkoppeling.
 
 ## Bestanden
-- `index.html` — structuur en content
-- `style.css` — responsive ontwerp
-- `app.js` — quizlogica, menu en koppeling met Google Sheets
-- `google-apps-script.gs` — gratis Google Apps Script endpoint voor de aanmeldingen
+- `index.html` — website
+- `style.css` — bestaande styling + kleine uitbreidingen
+- `app.js` — quiz, countdown en verzending naar Google Sheets
+- `google-apps-script.gs` — Apps Script endpoint voor Google Sheets
 
-## 1. Quiz-antwoorden aanpassen
-Open `app.js` en wijzig:
+## 1. Google Sheet koppelen
+1. Maak/open de Google Sheet waarin de aanmeldingen moeten komen.
+2. Ga naar **Extensies → Apps Script**.
+3. Plak de inhoud van `google-apps-script.gs`.
+4. Kies **Implementeren → Nieuwe implementatie**.
+5. Type: **Web-app**.
+6. Uitvoeren als: **Ik**.
+7. Wie heeft toegang: **Iedereen**.
+8. Implementeer en kopieer de URL die eindigt op `/exec`.
+9. Open `app.js` en vervang `PASTE_YOUR_GOOGLE_APPS_SCRIPT_EXEC_URL_HERE` door die URL.
+10. Upload daarna alle websitebestanden opnieuw.
 
-```js
-const QUESTIONS = [
-  { text: "Wat is de geheime code?", answer: "CPB&PGrtVgl" },
-  { text: "Wat is de code van de koffer?", answer: "986" },
-  { text: "Maak de zin af: vanwege ...", answer: "je vrienden" }
-];
-```
+De kolomkoppen worden automatisch aangemaakt op tabblad `Aanmeldingen`.
 
-Vervang de drie voorbeeldantwoorden door jullie echte antwoorden.
+## 2. Countdown
+De teller telt af naar **14 november 2026 om 16:00 Nederlandse tijd**. De functie wordt nu ook daadwerkelijk gestart.
 
-## 2. Google Sheet maken
-1. Maak een nieuwe Google Sheet.
-2. Geef hem bijvoorbeeld de naam `Undercover bij de Pofietsie`.
-3. Ga naar `Extensies > Apps Script`.
-4. Open `google-apps-script.gs` en kopieer de volledige inhoud.
-5. Plak die in Apps Script.
-6. Klik op **Opslaan**.
-7. Kies **Implementeren > Nieuwe implementatie**.
-8. Kies bij type **Web-app**.
-9. Bij "Uitvoeren als" kies je **Ik**.
-10. Bij "Wie heeft toegang" kies je **Iedereen**.
-11. Klik **Implementeren** en geef de gevraagde toestemming.
-12. Kopieer de URL die eindigt op `/exec`.
+## 3. Betaling
+De website gebruikt het aangeleverde ING-betaalverzoek voor **€199**. Er is geen QR-code meer.
 
-## 3. Website koppelen
-Open `app.js` en verander:
+## 4. Foto
+De aangeleverde biker/punkerfoto wordt als hero-afbeelding gebruikt en staat ook in de voorbereiding.
 
-```js
-const SHEET_ENDPOINT = "";
-```
-
-naar:
-
-```js
-const SHEET_ENDPOINT = "JULLIE_GOOGLE_APPS_SCRIPT_URL";
-```
-
-Bijvoorbeeld:
-
-```js
-const SHEET_ENDPOINT = "https://script.google.com/macros/s/XXXX/exec";
-```
-
-Daarna wordt iedere aanmelding automatisch toegevoegd aan het tabblad `Aanmeldingen`.
-
-De sheet krijgt automatisch deze kolommen:
-- Tijdstip
-- Naam
-- Aantal personen
-- Aankomst
-- Vertrek
-- Vervoer
-- Dieetwensen
-- Wat drink je graag?
-
-## 4. Online zetten
-De website kan daarna gratis op GitHub Pages, Netlify of Cloudflare Pages worden geplaatst.
-
-### Privacy
-Omdat je naam, aankomst/vertrek en dieetwensen verzamelt, behandel de Google Sheet als privé en deel hem alleen met de organisatie. Verzamel alleen gegevens die jullie daadwerkelijk nodig hebben.
+## 5. Quiz
+De drie bestaande vragen en antwoorden zijn niet inhoudelijk aangepast:
+- `CPB&PGrtVgl`
+- `986`
+- `je vrienden`
